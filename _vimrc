@@ -80,7 +80,6 @@ if &compatible
       " You can specify revision/branch/tag.
       call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
       call dein#add('Shougo/unite.vim')
-			" new
 			call dein#add('Shougo/neomru.vim')
 			call dein#add('Shougo/neocomplcache.vim')
 			call dein#add('Shougo/neocomplcache-rsense.vim')
