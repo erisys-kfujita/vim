@@ -1,3 +1,60 @@
+"dein Scripts-----------------------------
+let s:dein_dir = expand('~/.vim/bundle')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+if !isdirectory(s:dein_repo_dir)
+				execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+endif
+
+" Required:
+set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
+  " Let dein manage dein
+  " Required:
+  call dein#add(s:dein_repo_dir)
+
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+
+  " You can specify revision/branch/tag.
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  call dein#add('Shougo/unite.vim')
+	call dein#add('Shougo/neomru.vim')
+	call dein#add('Shougo/neocomplcache.vim')
+	call dein#add('Shougo/neocomplcache-rsense.vim')
+	call dein#add('tpope/vim-fugitive')
+	call dein#add('kmnk/vim-unite-giti')
+
+  call dein#add('scrooloose/nerdtree')
+
+	" colorscheme
+	call dein#add('sjl/badwolf')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+
 " setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
@@ -57,52 +114,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " カレントディレクトを自動的に移動
 set autochdir
 
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-  endif
-
-  " Required:
-  set runtimepath+=/home/centos/.vim/bundle/repos/github.com/Shougo/dein.vim
-
-  " Required:
-  if dein#load_state('/home/centos/.vim/bundle')
-    call dein#begin('/home/centos/.vim/bundle')
-
-      " Let dein manage dein
-      " Required:
-      call dein#add('/home/centos/.vim/bundle/repos/github.com/Shougo/dein.vim')
-
-      " Add or remove your plugins here:
-      call dein#add('Shougo/neosnippet.vim')
-      call dein#add('Shougo/neosnippet-snippets')
-
-      " You can specify revision/branch/tag.
-      call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-      call dein#add('Shougo/unite.vim')
-			call dein#add('Shougo/neomru.vim')
-			call dein#add('Shougo/neocomplcache.vim')
-			call dein#add('Shougo/neocomplcache-rsense.vim')
-			call dein#add('tpope/vim-fugitive')
-			call dein#add('kmnk/vim-unite-giti')
-
-      call dein#add('scrooloose/nerdtree')
-
-      " Required:
-      call dein#end()
-      call dein#save_state()
-  endif
-
-  " Required:
-  filetype plugin indent on
-  syntax enable
-
-  " If you want to install not installed plugins on startup.
-  if dein#check_install()
-    call dein#install()
-  endif
-
-"End dein Scripts-------------------------
 
 
 "------------------------------------
@@ -134,8 +145,13 @@ map <C-n> :NERDTreeToggle<CR>
 "-------------------------------------
 " HELP JP
 "-------------------------------------
-set runtimepath+=~/.vim/bundle/vimdoc-ja
-helptags ~/.vim/bundle/vimdoc-ja/doc
+set runtimepath+=~/.vim/bundle/repos/github.com/vimdoc-ja
+let s:vimdoc='~/.vim/bundle/repos/github.com/vimdoc-ja'
+if !isdirectory(s:vimdoc)
+				"1回だけ実行
+				"execute '!git clone https://github.com/vim-jp/vimdoc-ja.git' s:vimdoc
+endif
+helptags ~/.vim/bundle/repos/github.com/vimdoc-ja/doc
 set helplang=ja,en
 
 "-------------------------------------
