@@ -82,6 +82,8 @@ set cursorline
 set cursorcolumn
 " 256色対応
 set t_Co=256
+" エンコーディング
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 " 改行コード
 set fileformats=unix,dos,mac
 " インデントはスマートインデント
