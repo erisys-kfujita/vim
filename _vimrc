@@ -115,7 +115,8 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " カレントディレクトを自動的に移動
 set autochdir
-
+" INSERT MODEから抜ける
+inoremap <silent>jj <ESC>
 
 
 "------------------------------------
