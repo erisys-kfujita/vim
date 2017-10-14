@@ -1,4 +1,5 @@
 "dein Scripts-----------------------------
+
 let s:dein_dir = expand('~/.vim/bundle')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
@@ -118,6 +119,8 @@ set autochdir
 " INSERT MODEから抜ける
 inoremap <silent>jj <ESC>
 
+" スクロールの開始位置を調整
+set scrolloff=5
 
 "------------------------------------
 "" unite.vim
