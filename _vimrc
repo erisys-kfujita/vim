@@ -118,6 +118,8 @@ set autochdir
 " INSERT MODEから抜ける
 inoremap <silent>jj <ESC>
 
+" スクロールの開始位置を調整
+set scrolloff=5
 
 "------------------------------------
 "" unite.vim
