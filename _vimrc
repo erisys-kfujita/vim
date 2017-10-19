@@ -88,7 +88,11 @@ set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 " 改行コード
 set fileformats=unix,dos,mac
 " インデントはスマートインデント
-set smartindent
+"set smartindent
+" インデントはオートインデント
+"set autoindent
+" 自動インデント
+set shiftwidth=2
 " ステータスラインを常に表示
 set laststatus=2
 " コマンドラインの補完
@@ -179,18 +183,18 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 
-"-------------------------------------
-" Rsense用の設定
-"-------------------------------------
+""-------------------------------------
+"" Rsense用の設定
+""-------------------------------------
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-
-"rsenseのインストールフォルダがデフォルトと異なるので設定
-let g:rsenseHome = expand("~/.rbenv/shims/rsense")
-let g:rsenseUseOmniFunc = 1
+"let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+"
+""rsenseのインストールフォルダがデフォルトと異なるので設定
+"let g:rsenseHome = expand("~/.rbenv/shims/rsense")
+"let g:rsenseUseOmniFunc = 1
 
 "-------------------------------------
 " Unite-gitiの設定
